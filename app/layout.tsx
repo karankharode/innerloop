@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next'
+import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import { brand } from '@/lib/brand'
 import { siteUrl } from '@/lib/env'
@@ -36,6 +37,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body>
         <div className="relative z-10">{children}</div>
+        <Analytics />
       </body>
     </html>
   )
