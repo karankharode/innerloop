@@ -61,8 +61,36 @@ export function renderCard(
             marginTop: 28,
           }}
         >
-          <div style={{ display: 'flex', fontSize: 26, color: '#b6b2ab', letterSpacing: 1 }}>
-            {opts.name ? `${opts.name} · ${brand.name}` : brand.name}
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              fontSize: 26,
+              color: '#b6b2ab',
+              letterSpacing: 1,
+            }}
+          >
+            <svg width="32" height="32" viewBox="0 0 64 64" fill="none">
+              <circle
+                cx="32"
+                cy="32"
+                r="21"
+                stroke="#e8e2d6"
+                strokeWidth="7.2"
+                strokeLinecap="round"
+                strokeDasharray="112.4 19.6"
+                transform="rotate(-38 32 32)"
+              />
+              <path
+                d="M23 39.2 C21.6 29.4 27.8 21.8 36.2 22.4 C42.6 22.9 47.2 21.2 52.4 17.6"
+                stroke="#8b8cf0"
+                strokeWidth="6.4"
+                strokeLinecap="round"
+              />
+            </svg>
+            <span style={{ display: 'flex', marginLeft: 10 }}>
+              {opts.name ? `${opts.name} · ${brand.name}` : brand.name}
+            </span>
           </div>
           {opts.dateLabel && (
             <div style={{ display: 'flex', fontSize: 22, color: '#7a7770' }}>{opts.dateLabel}</div>

@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Nav from '@/components/Nav'
 import WaitlistForm from '@/components/WaitlistForm'
+import { LogoMark } from '@/components/Logo'
 import { brand } from '@/lib/brand'
 import { QUESTIONS_PER_SESSION } from '@/lib/engine'
 import { supabaseAdmin } from '@/lib/supabase/admin'
@@ -111,7 +112,10 @@ export default async function HomePage() {
         </section>
 
         <footer className="mt-20 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-ink-700 pt-8 text-sm text-paper-faint">
-          <span>© {new Date().getFullYear()} {brand.name}</span>
+          <span className="flex items-center gap-2">
+            <LogoMark size={20} />
+            © {new Date().getFullYear()} {brand.name}
+          </span>
           <Link href="/privacy" className="transition-colors hover:text-paper">
             Privacy
           </Link>

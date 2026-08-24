@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import { LogoMark } from '@/components/Logo'
 import SummaryView from '@/components/SummaryView'
 import { getPublicSession } from '@/lib/sessions'
 import { brand } from '@/lib/brand'
@@ -45,7 +46,8 @@ export default async function PublicSessionPage({
   return (
     <main className="mx-auto w-full max-w-2xl px-5 pb-24 sm:px-8">
       <header className="flex items-center justify-between py-6">
-        <Link href="/" className="font-serif text-lg tracking-tight">
+        <Link href="/" className="flex items-center gap-2 font-serif text-lg tracking-tight">
+          <LogoMark size={26} />
           {brand.name}
         </Link>
         <span className="text-xs uppercase tracking-[0.2em] text-paper-faint">

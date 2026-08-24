@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { LogoMark } from '@/components/Logo'
 import { brand } from '@/lib/brand'
 import { getCurrentUser } from '@/lib/supabase/server'
 
@@ -9,8 +10,9 @@ export default async function Nav() {
     <header className="mx-auto flex w-full max-w-3xl items-center justify-between px-5 py-6 sm:px-8">
       <Link
         href="/"
-        className="font-serif text-lg tracking-tight text-paper transition-opacity hover:opacity-80"
+        className="flex items-center gap-2 font-serif text-lg tracking-tight text-paper transition-opacity hover:opacity-80"
       >
+        <LogoMark className="text-paper" />
         {brand.name}
       </Link>
 

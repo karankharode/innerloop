@@ -11,6 +11,11 @@ export const metadata: Metadata = {
     template: `%s · ${brand.name}`,
   },
   description: brand.shortDescription,
+  applicationName: brand.name,
+  appleWebApp: {
+    title: brand.name,
+    statusBarStyle: 'black-translucent',
+  },
   openGraph: {
     type: 'website',
     siteName: brand.name,
