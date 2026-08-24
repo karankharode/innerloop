@@ -2,10 +2,11 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import WaitlistForm from '@/components/WaitlistForm'
 
 /**
- * The conversion moment. Anonymous visitors see why an account is worth it;
- * signed-in owners get the card and the public link.
+ * Signed-in owners get the card and public link. Everyone else can leave
+ * an email for what comes next.
  */
 export default function ShareControls({
   sessionId,
@@ -27,27 +28,14 @@ export default function ShareControls({
   if (!signedIn) {
     return (
       <aside className="mt-12 rounded-2xl border border-ink-700 bg-ink-900/70 p-6">
-        <h2 className="font-serif text-xl">Keep this session</h2>
-        <p className="mt-2 text-sm leading-relaxed text-paper-dim">
-          Create a free account and this session is saved to your private history —
-          along with the card and a link you can share, if you want to. Nothing is
-          public unless you turn it on.
-        </p>
-        <div className="mt-5 flex flex-wrap items-center gap-3">
-          <Link
-            href={`/login?next=${encodeURIComponent(`/results/${sessionId}`)}`}
-            className="rounded-full bg-paper px-6 py-3 font-medium text-ink-950"
-          >
-            Save my results
-          </Link>
-          <Link href="/reflect" className="text-sm text-paper-dim hover:text-paper">
-            Or start another session
-          </Link>
-        </div>
-        <p className="mt-4 text-xs text-paper-faint">
-          Your answers are already stored against this browser. Signing in attaches
-          them to you.
-        </p>
+        <WaitlistForm
+          source="results"
+          heading="Want what comes next?"
+          body="Leave an email. We will write when Innerloop has something new worth your time. No account, no password."
+        />
+        <Link href="/reflect" className="mt-5 inline-block text-sm text-paper-dim hover:text-paper">
+          Or start another session
+        </Link>
       </aside>
     )
   }

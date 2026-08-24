@@ -31,7 +31,7 @@ export default async function Nav() {
           </>
         ) : (
           <Link href="/login" className="rounded px-2 py-1 transition-colors hover:text-paper">
-            Sign in
+            Notify me
           </Link>
         )}
       </nav>

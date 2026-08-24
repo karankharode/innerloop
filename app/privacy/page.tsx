@@ -21,8 +21,9 @@ export default function PrivacyPage() {
               <h2 className="font-serif text-xl text-paper">What we store</h2>
               <p className="mt-2">
                 Your answers, the questions you were asked, and when you answered them.
-                If you create an account, we also store your email address. That is the
-                whole list.
+                If you leave an email to hear what comes next, we store that address on
+                a waitlist. If you create an account, we also store your email for sign-in.
+                That is the whole list.
               </p>
             </section>
 

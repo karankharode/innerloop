@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Nav from '@/components/Nav'
+import WaitlistForm from '@/components/WaitlistForm'
 import { brand } from '@/lib/brand'
 import { QUESTIONS_PER_SESSION } from '@/lib/engine'
 import { supabaseAdmin } from '@/lib/supabase/admin'
@@ -43,7 +44,7 @@ export default async function HomePage() {
               Start a session
             </Link>
             <span className="text-sm text-paper-faint sm:ml-2">
-              Start anonymously — save it at the end if you want to.
+              No account needed.
             </span>
           </div>
         </section>
@@ -84,11 +85,19 @@ export default async function HomePage() {
             <li className="flex gap-4">
               <span className="font-serif text-xl text-paper-faint">3</span>
               <p className="leading-relaxed">
-                Create an account to save it. Your sessions build a private history you
-                can read back later, and share only if you choose to.
+                If you want to hear when there is more, leave an email. Sessions stay in
+                this browser — no account required.
               </p>
             </li>
           </ol>
+        </section>
+
+        <section className="mt-16 rounded-2xl border border-ink-700 bg-ink-900/70 p-6">
+          <WaitlistForm
+            source="home"
+            heading="Want what comes next?"
+            body="Leave an email if you want a note when Innerloop grows. No account, no password."
+          />
         </section>
 
         <section className="mt-16 rounded-2xl border border-ink-700 bg-ink-900/60 p-6">

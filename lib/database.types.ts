@@ -102,6 +102,13 @@ export type QuestionCandidateRow = {
   last_seen_at: string
 }
 
+export type WaitlistRow = {
+  id: string
+  email: string
+  source: string | null
+  created_at: string
+}
+
 export type ProfileRow = {
   id: string
   display_name: string | null
@@ -126,6 +133,7 @@ export interface Database {
       sessions: Table<SessionRow>
       answers: Table<AnswerRow>
       question_candidates: Table<QuestionCandidateRow>
+      waitlist: Table<WaitlistRow>
     }
     Views: Record<string, never>
     Functions: Record<string, never>
